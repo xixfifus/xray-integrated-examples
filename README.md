@@ -69,7 +69,7 @@
 2. [Xray(M+K+F+C+B+G+A)+Caddy(N)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BF%2BC%2BB%2BG%2BA)%2BCaddy(N)%2BNginx)（以REALITY Vision为核心的综合应用。）
 #### &emsp;注意（以上所有示例）:
 1. Xray是V2Ray的超集，更好的整体性能和独有的XTLS Vision、REALITY等一系列应用增强，且完全兼容V2Ray的v4版。
-2. Xray/V2Ray单一核心应用简记：A=VLESS+mKCP+seed、B=VMess+WebSocket+TLS、C=Trojan+WebSocket+TLS、D=VLESS+H2C+TLS、E=VLESS+Vision+TLS、F=Trojan+TCP+TLS、G=Shadowsocks+gRPC+TLS、K=VLESS+H2C+REALITY、L=Shadowsocks+gRPC+REALITY、M=VLESS+Vision+REALITY。
+2. Xray/V2Ray单一核心应用简记：A=VLESS+mKCP+seed、B=VMess+WebSocket+TLS、C=Trojan+WebSocket+TLS、D=VLESS+H2C+TLS、E=VLESS+Vision+TLS、F=Trojan+TCP+TLS、G=Shadowsocks+gRPC+TLS、K=VLESS+H2C+REALITY、M=VLESS+Vision+REALITY。
 3. Xray/V2Ray示例中各应用都配置了禁用BT。如不需要，参考‘V2Ray(Other Configuration)’中BT_config.json示例删除相关配置。
 4. Caddy插件单一应用简记：N=NaiveProxy(Caddy+forwardproxy)、T=Trojan-Go(Caddy+caddy-trojan)。
 5. 受限应用条件及场景，NaiveProxy的QUIC应用（即Caddy的HTTP/3代理应用）不是所有相关NaiveProxy示例都支持。
