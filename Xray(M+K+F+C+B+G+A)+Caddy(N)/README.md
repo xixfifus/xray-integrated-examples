@@ -40,4 +40,4 @@
 
 10、配置1：使用 Local Loopback 连接，且启用了 PROXY protocol。配置2：使用 UDS 连接（对应 Shadowsocks+gRPC+TLS 除外），且启用了 PROXY protocol。
 
-11、若已有 Nginx 或大型网站、或需要 NaiveProxy 支持 HTTP/3 代理应用，推荐采用 [Xray(M+K+F+C+B+G+A)+Caddy(N)+Nginx](https://github.com/lxhao61/integrated-examples/tree/main/Xray(M%2BK%2BF%2BC%2BB%2BG%2BA)%2BCaddy(N)%2BNginx) 示例。
+11、若已有 Nginx 或大型网站、或需要 NaiveProxy 支持 HTTP/3 代理应用，推荐采用 [Xray(M+K+F+C+B+G+A)+Caddy(N)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BF%2BC%2BB%2BG%2BA)%2BCaddy(N)%2BNginx) 示例。
