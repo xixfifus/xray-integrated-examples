@@ -96,7 +96,7 @@ jobs:
         mkdir release-tmp
         export GOARCH=${{ matrix.config.GOARCH }} 
         export GOOS=${{ matrix.config.GOOS }} 
-        ~/go/bin/xcaddy build \
+        ~/go/bin/xcaddy build master \
           --with github.com/mholt/caddy-l4 \
           --with github.com/caddy-dns/cloudflare \
           --with clevergo.tech/caddy-dnspodcn \
@@ -104,7 +104,7 @@ jobs:
           --with github.com/mholt/caddy-dynamicdns \
           --with github.com/mholt/caddy-events-exec \
           --with github.com/caddyserver/forwardproxy@caddy2=github.com/sagernet/forwardproxy@latest \
-          --with github.com/imgk/caddy-trojan \
+          --with github.com/imgk/caddy-trojan@master \
           --with github.com/mholt/caddy-webdav \
           --with github.com/WeidiDeng/caddy-cloudflare-ip \
           --output ./release-tmp/caddy
