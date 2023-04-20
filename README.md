@@ -55,7 +55,7 @@
 2. [Xray(F+C+D+G+A)+Caddy(N)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(F%2BC%2BD%2BG%2BA)%2BCaddy(N))（以Trojan分流与回落Caddy为核心的综合应用。）
 #### &emsp;以XTLS Vision为核心的综合应用
 1. [Xray(E+B+G+A)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(E%2BB%2BG%2BA)%2BNginx)（以VLESS回落Nginx为核心的综合应用。）
-2. [Xray(E+B+D+G+A)+Caddy(N+T)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(E%2BB%2BD%2BG%2BA)%2BCaddy(N%2BT))（以VLESS回落Caddy为核心的综合应用。）
+2. [Xray(E+B+D+G+A)+Caddy(N)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(E%2BB%2BD%2BG%2BA)%2BCaddy(N))（以VLESS回落Caddy为核心的综合应用。）
 #### &emsp;以REALITY Vision为核心的综合应用
 1. [Xray(M+K+B+G+A)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BB%2BG%2BA)%2BNginx)（由Nginx提供网站实现以REALITY Vision为核心的综合应用。）
 2. [Xray(M+K+B+G+A)+Caddy(N)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BB%2BG%2BA)%2BCaddy(N))（由Caddy提供网站实现以REALITY Vision为核心的综合应用。）
