@@ -9,7 +9,7 @@
 
 注意：
 
-1、Xray 版本不小于 v1.7.1 才完美支持 VLESS 协议的 XTLS Vision 应用。
+1、Xray 版本不小于 v1.7.2 才完美支持 VLESS 协议的 XTLS Vision 应用。
 
 2、Nginx 支持 H2C server 需要 Nginx 包含 http_v2_module 模块。
 
