@@ -1,15 +1,15 @@
-½éÉÜ£º
+ä»‹ç»ï¼š
 
-±¾Ê¾ÀıÊµÏÖÀàËÆ Xray »ò V2Ray µÄ [Shadowsocks+gRPC+TLS](https://github.com/lxhao61/integrated-examples/tree/main/V2Ray(SS%2BgRPC)%2BCaddy%5CNginx) Ó¦ÓÃ£¬TLS ÓÉ REALITY È¡´ú¡£¿ÉÏû³ı·şÎñ¶Ë TLS Ö¸ÎÆÌØÕ÷£¬ÈÔÓĞÇ°Ïò±£ÃÜĞÔµÈ£¬ÇÒÖ¤ÊéÁ´¹¥»÷ÎŞĞ§£¬°²È«ĞÔ³¬Ô½³£¹æ TLS¡£¿ÉÖ¸Ïò±ğÈËµÄÍøÕ¾£¬ÎŞĞè×Ô¼ºÂòÓòÃû¡¢ÅäÖÃ TLS ·şÎñ¶Ë£¬¸ü·½±ã£¬ÊµÏÖÏòÖĞ¼äÈË³ÊÏÖÖ¸¶¨ SNI µÄÈ«³ÌÕæÊµ TLS£¬¿É½â¾ö SNI Ãûµ¥×è¶ÏÎÊÌâ¡£
+æœ¬ç¤ºä¾‹å®ç°ç±»ä¼¼ Xray æˆ– V2Ray çš„ [Shadowsocks+gRPC+TLS](https://github.com/lxhao61/integrated-examples/tree/main/V2Ray(SS%2BgRPC)%2BCaddy%5CNginx) åº”ç”¨ï¼ŒTLS ç”± REALITY å–ä»£ã€‚å¯æ¶ˆé™¤æœåŠ¡ç«¯ TLS æŒ‡çº¹ç‰¹å¾ï¼Œä»æœ‰å‰å‘ä¿å¯†æ€§ç­‰ï¼Œä¸”è¯ä¹¦é“¾æ”»å‡»æ— æ•ˆï¼Œå®‰å…¨æ€§è¶…è¶Šå¸¸è§„ TLSã€‚å¯æŒ‡å‘åˆ«äººçš„ç½‘ç«™ï¼Œæ— éœ€è‡ªå·±ä¹°åŸŸåã€é…ç½® TLS æœåŠ¡ç«¯ï¼Œæ›´æ–¹ä¾¿ï¼Œå®ç°å‘ä¸­é—´äººå‘ˆç°æŒ‡å®š SNI çš„å…¨ç¨‹çœŸå® TLSï¼Œå¯è§£å†³ SNI åå•é˜»æ–­é—®é¢˜ã€‚
 
-Ô­Àí£º
+åŸç†ï¼š
 
-Ê¹ÓÃÄ¿±êÍøÕ¾Ö¤Êé£¨ÊÜĞÅÖ¤Êé£©µÄ TLS Î±×°´úÀí¡£
+ä½¿ç”¨ç›®æ ‡ç½‘ç«™è¯ä¹¦ï¼ˆå—ä¿¡è¯ä¹¦ï¼‰çš„ TLS ä¼ªè£…ä»£ç†ã€‚
 
-×¢Òâ£º
+æ³¨æ„ï¼š
 
-1¡¢Xray °æ±¾²»Ğ¡ÓÚ v1.8.0 ²ÅÖ§³Ö REALITY ¼°Í¬²½ uTLS£¨Ç¿ÖÆ¿Í»§¶Ë±ØĞëÊ¹ÓÃÖ¸ÎÆÎ±Ôì£©¡£
+1ã€Xray ç‰ˆæœ¬ä¸å°äº v1.8.0 æ‰æ”¯æŒ REALITY åŠåŒæ­¥ uTLSï¼ˆå¼ºåˆ¶å®¢æˆ·ç«¯å¿…é¡»ä½¿ç”¨æŒ‡çº¹ä¼ªé€ ï¼‰ã€‚
 
-2¡¢ÈôÄ¿±êÍøÕ¾Ê¹ÓÃÍâ²¿µÄ£¬Æä×îµÍ±ê×¼£º¹úÍâÍøÕ¾£¬Ö§³Ö TLSv1.3 Óë HTTP/2£¬ÓòÃû·ÇÌø×ª£»ÊÇ·ñ·ûºÏ±ê×¼¿ÉÓÃ [SSL Server Test](https://www.ssllabs.com/ssltest/) ¼ì²é¡£
+2ã€è‹¥ç›®æ ‡ç½‘ç«™ä½¿ç”¨å¤–éƒ¨çš„ï¼Œå…¶æœ€ä½æ ‡å‡†ï¼šå›½å¤–ç½‘ç«™ï¼Œæ”¯æŒ TLSv1.3 ä¸ HTTP/2ï¼ŒåŸŸåéè·³è½¬ï¼›æ˜¯å¦ç¬¦åˆæ ‡å‡†å¯ç”¨ [SSL Server Test](https://www.ssllabs.com/ssltest/) æ£€æŸ¥ã€‚
 
-3¡¢ÈôÄ¿±êÍøÕ¾Ê¹ÓÃ×Ô¼ºµÄ£¬ÍøÕ¾¼°¹ØÁªÅäÖÃ¿É²Î¿¼ [Xray(M+K+B+G+A)+Nginx](https://github.com/lxhao61/integrated-examples/tree/main/Xray(M%2BK%2BB%2BG%2BA)%2BNginx) »ò [Xray(M+K+B+G+A)+Caddy(N)](https://github.com/lxhao61/integrated-examples/tree/main/Xray(M%2BK%2BB%2BG%2BA)%2BCaddy(N)) ÅäÖÃ¡£
+3ã€è‹¥ç›®æ ‡ç½‘ç«™ä½¿ç”¨è‡ªå·±çš„ï¼Œç½‘ç«™åŠå…³è”é…ç½®å¯å‚è€ƒ [Xray(M+K+B+G+A)+Nginx](https://github.com/lxhao61/integrated-examples/tree/main/Xray(M%2BK%2BB%2BG%2BA)%2BNginx) æˆ– [Xray(M+K+B+G+A)+Caddy(N+T)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BB%2BG%2BA)%2BCaddy(N%2BT)) é…ç½®ã€‚
