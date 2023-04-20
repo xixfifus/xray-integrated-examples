@@ -29,18 +29,17 @@
 3. [V2Ray(VLESS+gRPC)+Caddy\Nginx](https://github.com/lxhao61/integrated-examples/tree/new/V2Ray(VLESS%2BgRPC)%2BCaddy%5CNginx)（VLESS+gRPC+TLS应用。）
 4. [V2Ray(Trojan+gRPC)+Caddy\Nginx](https://github.com/lxhao61/integrated-examples/tree/new/V2Ray(Trojan%2BgRPC)%2BCaddy%5CNginx)（Trojan+gRPC+TLS应用。）
 #### &emsp;Xray的VLESS与Trojan回落应用
-1. [Xray(VLESS+Vision+TLS)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(VLESS%2BVision%2BTLS)%2BNginx)（VLESS+Vision+TLS回落Nginx。标记为E。）
-2. [Xray(VLESS+Vision+TLS)+Caddy](https://github.com/lxhao61/integrated-examples/tree/new/Xray(VLESS%2BVision%2BTLS)%2BCaddy)（VLESS+Vision+TLS回落Caddy。标记为E。）
-3. [Xray(Trojan+TCP+TLS)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(Trojan%2BTCP%2BTLS)%2BNginx)（Trojan+TCP+TLS回落Nginx应用。标记为F。）
-4. [Xray(Trojan+TCP+TLS)+Caddy](https://github.com/lxhao61/integrated-examples/tree/new/Xray(Trojan%2BTCP%2BTLS)%2BCaddy)（Trojan+TCP+TLS回落Caddy应用。标记为F。）
+1. [Xray(Trojan+TCP+TLS)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(Trojan%2BTCP%2BTLS)%2BNginx)（Trojan+TCP+TLS回落Nginx应用。标记为F。）
+2. [Xray(Trojan+TCP+TLS)+Caddy](https://github.com/lxhao61/integrated-examples/tree/new/Xray(Trojan%2BTCP%2BTLS)%2BCaddy)（Trojan+TCP+TLS回落Caddy应用。标记为F。）
+3. [Xray(VLESS+Vision+TLS)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(VLESS%2BVision%2BTLS)%2BNginx)（VLESS+Vision+TLS回落Nginx。标记为E。）
+4. [Xray(VLESS+Vision+TLS)+Caddy](https://github.com/lxhao61/integrated-examples/tree/new/Xray(VLESS%2BVision%2BTLS)%2BCaddy)（VLESS+Vision+TLS回落Caddy。标记为E。）
 #### &emsp;Caddy插件应用
 1. [NaiveProxy(Caddy+forwardproxy)](https://github.com/lxhao61/integrated-examples/tree/new/NaiveProxy(Caddy%2Bforwardproxy))（基于Caddy插件的NaiveProxy应用。标记为N。）
 2. [Trojan-Go(Caddy+caddy-trojan)](https://github.com/lxhao61/integrated-examples/tree/new/Trojan-Go(Caddy%2Bcaddy-trojan))（基于Caddy插件的Trojan-Go应用。标记为T。）
 3. [Caddy(N+T)](https://github.com/lxhao61/integrated-examples/tree/new/Caddy(N%2BT))（基于Caddy插件的NaiveProxy与Trojan-Go应用。）
-#### &emsp;Xray的REALITY H2应用
+#### &emsp;Xray的REALITY H2/gRPC应用
 1. [Xray(VLESS+H2C+REALITY)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(VLESS%2BH2C%2BREALITY))（VLESS+H2C+REALITY应用。标记为K。）
-#### &emsp;Xray的REALITY gRPC应用
-1. [Xray(SS+gRPC+REALITY)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(SS%2BgRPC%2BREALITY))（Shadowsocks+gRPC+REALITY应用。标记为L。）
+2. [Xray(SS+gRPC+REALITY)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(SS%2BgRPC%2BREALITY))（Shadowsocks+gRPC+REALITY应用。）
 #### &emsp;Xray的REALITY Vision应用
 1. [Xray(VLESS+Vision+REALITY)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(VLESS%2BVision%2BREALITY))（VLESS+Vision+REALITY应用。标记为M。）
 #### &emsp;Xray的REALITY简单应用
