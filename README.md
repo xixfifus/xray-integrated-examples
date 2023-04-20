@@ -58,16 +58,16 @@
 2. [Xray(E+B+D+G+A)+Caddy(N)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(E%2BB%2BD%2BG%2BA)%2BCaddy(N))（以VLESS回落Caddy为核心的综合应用。）
 #### &emsp;以REALITY Vision为核心的综合应用
 1. [Xray(M+K+B+G+A)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BB%2BG%2BA)%2BNginx)（由Nginx提供网站实现以REALITY Vision为核心的综合应用。）
-2. [Xray(M+K+B+G+A)+Caddy(N)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BB%2BG%2BA)%2BCaddy(N))（由Caddy提供网站实现以REALITY Vision为核心的综合应用。）
+2. [Xray(M+K+B+G+A)+Caddy(N+T)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BB%2BG%2BA)%2BCaddy(N%2BT))（由Caddy提供网站实现以REALITY Vision为核心的综合应用。）
 #### &emsp;由Nginx/Caddy兼顾SNI分流实现XTLS Vision与Trojan回落/分流为核心的综合应用
 1. [Xray(E+B+F+C+G+A)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(E%2BB%2BF%2BC%2BG%2BA)%2BNginx)（由Nginx兼顾SNI分流实现的综合应用。）
 2. [Xray(E+B+F+C+D+G+A)+Caddy(N)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(E%2BB%2BF%2BC%2BD%2BG%2BA)%2BCaddy(N))（由Caddy兼顾SNI分流实现的综合应用。）
 #### &emsp;由Nginx/Caddy兼顾SNI分流实现REALITY Vision与Trojan回落/分流为核心的综合应用
 1. [Xray(M+K+F+C+B+G+A)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BF%2BC%2BB%2BG%2BA)%2BNginx)（由Nginx兼顾SNI分流实现的综合应用。）
 2. [Xray(M+K+F+C+B+G+A)+Caddy(N)](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BF%2BC%2BB%2BG%2BA)%2BCaddy(N))（由Caddy兼顾SNI分流实现的综合应用。）
-#### &emsp;由Nginx/HAProxy专职SNI分流实现兼顾各方优势的综合应用
-1. [Xray(E+B+F+C+D+G+A)+Caddy(N)+Nginx\HAProxy](https://github.com/lxhao61/integrated-examples/tree/new/Xray(E%2BB%2BF%2BC%2BD%2BG%2BA)%2BCaddy(N)%2BNginx%5CHAProxy)（以Vision为核心的综合应用。）
-2. [Xray(M+K+F+C+B+G+A)+Caddy(N)+Nginx\HAProxy](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BF%2BC%2BB%2BG%2BA)%2BCaddy(N)%2BNginx%5CHAProxy)（以REALITY Vision为核心的综合应用。）
+#### &emsp;由Nginx专职SNI分流实现兼顾各方优势的综合应用
+1. [Xray(E+B+F+C+D+G+A)+Caddy(N)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(E%2BB%2BF%2BC%2BD%2BG%2BA)%2BCaddy(N)%2BNginx)（以Vision为核心的综合应用。）
+2. [Xray(M+K+F+C+B+G+A)+Caddy(N)+Nginx](https://github.com/lxhao61/integrated-examples/tree/new/Xray(M%2BK%2BF%2BC%2BB%2BG%2BA)%2BCaddy(N)%2BNginx)（以REALITY Vision为核心的综合应用。）
 #### &emsp;注意（以上所有示例）:
 1. Xray是V2Ray的超集，更好的整体性能和独有的XTLS Vision、REALITY等一系列应用增强，且完全兼容V2Ray的v4版。
 2. Xray/V2Ray单一核心应用简记：A=VLESS+mKCP+seed、B=VMess+WebSocket+TLS、C=Trojan+WebSocket+TLS、D=VLESS+H2C+TLS、E=VLESS+Vision+TLS、F=Trojan+TCP+TLS、G=Shadowsocks+gRPC+TLS、K=VLESS+H2C+REALITY、L=Shadowsocks+gRPC+REALITY、M=VLESS+Vision+REALITY。
