@@ -74,8 +74,8 @@
 4. Caddy插件单一应用简记：N=NaiveProxy(Caddy+forwardproxy)、T=Trojan-Go(Caddy+caddy-trojan)。
 5. 受限应用条件及场景，NaiveProxy的QUIC应用（即Caddy的HTTP/3代理应用）不是所有相关NaiveProxy示例都支持。
 6. 目前Caddy从Let's Encrypt或ZeroSSL自动申请的TLS证书默认都为ECC证书。
-7. 针对V2Ray特性，当前优先推荐使用非AES算法密码套件配置示例（仅反代示例支持），最后常规配置示例。
-8. 针对Xray特性，当前优先推荐使用REALITY Vision配置示例或Vision配置示例、非AES算法的密码套件配置示例、REALITY配置示例，最后常规配置示例。
+7. 针对V2Ray特性，当前推荐使用非AES算法密码套件配置示例（仅反代示例支持）。
+8. 针对Xray特性，当前推荐使用顺序：REALITY Vision配置示例或Vision配置示例、非AES算法的密码套件配置示例、REALITY配置示例。
 9. 当前不推荐使用WebSocket传输方式的应用直接科学上网，套CDN使用无碍。若CDN流量中转（基于WebSocket over TLS或基于gRPC over TLS）使用不可信的CDN进行中转，Xray/V2Ray示例推荐使用自身带加密的VMess或Shadowsocks协议配置；否则推荐使用自身不带加密的VLESS或Trojan协议配置。
 10. 综合应用配置示例中使用mKCP、WebSocket、HTTP/2、gRPC传输方式的应用配置可删、可换、可增（套娃实现REALITY H2/gRPC应用除外）；参考‘服务端单一/简单应用配置示例’中对应配置示例修改。
 11. 流量伪装与防探测网站可由其它WEB应用软件实现，其支持反代（WebSocket、gRPC及H2C）与支持回落（H2C server及HTTP/1.1 server）取决于自身，自行参考Caddy或Nginx对应配置示例。
