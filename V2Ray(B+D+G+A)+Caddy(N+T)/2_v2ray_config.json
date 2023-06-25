@@ -6,7 +6,7 @@
   },
   "inbounds": [
     {
-      "listen": "@vmessws", //VMess+WebSocket监听进程
+      "listen": "@vmessws.sock", //VMess+WebSocket监听进程
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -32,7 +32,7 @@
       }
     },
     {
-      "listen": "@vlessh2c", //VLESS+H2C监听进程
+      "listen": "@vlessh2c.sock", //VLESS+H2C监听进程
       "protocol": "vless",
       "settings": {
         "clients": [
