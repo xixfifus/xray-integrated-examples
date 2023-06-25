@@ -16,7 +16,7 @@
   "apps": {
     "http": {
       "servers": {
-        "https": {
+        "http3": {
           "listen": [":443"],
           "listener_wrappers": [{
             "wrapper": "trojan" //caddy-trojan插件应用必须配置
