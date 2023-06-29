@@ -1,6 +1,6 @@
 介绍：
 
-Xray 前置（监听 443 端口），利用 VLESS+Vision+TLS 回落及分流 WebSocket 特性与 Caddy 为 gRPC 提供反向代理，实现除 Xray 的 mKCP 应用外共用 443 端口，其应用如下：
+Xray 前置（监听 443 端口），利用 VLESS+Vision+TLS 回落/分流 WebSocket 特点及 Caddy 为 gRPC 提供反向代理，实现除 Xray 的 mKCP 应用外各应用共用 443 端口，其应用如下：
 
 1、E=VLESS+Vision+TLS（回落/分流配置，TLS 由自己启用及处理。）
 
@@ -12,11 +12,11 @@ Xray 前置（监听 443 端口），利用 VLESS+Vision+TLS 回落及分流 Web
 
 注意：
 
-1、Xray 的监听地址不支持 Shadowsocks 协议使用 UDS 监听。
+1、Xray 版本不小于 v1.7.2 才完美支持 VLESS 协议的 XTLS Vision 应用。
 
-2、Xray 版本不小于 v1.7.2 才完美支持 VLESS 协议的 XTLS Vision 应用。
+2、Xray 的监听地址不支持 Shadowsocks 协议使用 UDS 监听。
 
-3、Caddy 支持 HTTP/1.1 server 与 H2C server 共用一个端口或一个进程。
+3、Caddy 支持 H2C server 与 HTTP/1.1 server 共用一个端口或一个进程。
 
 4、Caddy 版本不小于 v2.6.0 才支持 H2C/gRPC proxy 的 UDS 转发。
 

@@ -20,12 +20,12 @@
         "fallbacks": [
           {
             "path": "/HALdGZ9k", //通过路径分流
-            "dest": "@vmessws", //分流后转给VMess+WebSocket监听进程
-            "xver": 1 //开启PROXY protocol发送，发送真实来源IP和端口给如下VMess+WebSocket应用。1或2表示PROXY protocol版本。
+            "dest": "@vmessws.sock", //分流后转给VMess+WebSocket监听进程
+            "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给如下VMess+WebSocket应用。1或2表示PROXY protocol版本。
           },
           {
-            "dest": "@h1h2c", //h2与http/1.1回落进程（共用进程）
-            "xver": 1 //开启PROXY protocol发送，发送真实来源IP和端口给Caddy。1或2表示PROXY protocol版本。
+            "dest": "@h1h2c.sock", //h2回落与http/1.1回落共用进程
+            "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给Caddy。1或2表示PROXY protocol版本。
           }
         ]
       },
@@ -59,7 +59,7 @@
       }
     },
     {
-      "listen": "@vmessws", //VMess+WebSocket监听进程
+      "listen": "@vmessws.sock", //VMess+WebSocket监听进程
       "protocol": "vmess",
       "settings": {
         "clients": [
