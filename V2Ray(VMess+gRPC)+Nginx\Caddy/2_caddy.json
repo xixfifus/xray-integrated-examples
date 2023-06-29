@@ -16,7 +16,7 @@
   "apps": {
     "http": {
       "servers": {
-        "https": {
+        "http2": {
           "listen": [":443"],
           "routes": [{
             "match": [{
@@ -30,7 +30,7 @@
                 "versions": ["h2c","2"]
               },
               "upstreams": [{
-                "dial": "unix/@vmessgrpc" //转发给本机VMess+gRPC监听进程
+                "dial": "unix/@vmessgrpc.sock" //转发给本机VMess+gRPC监听进程
               }],
               "headers": {
               	"request": {
