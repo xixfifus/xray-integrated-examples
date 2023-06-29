@@ -16,7 +16,7 @@
 
 3、Nginx 支持不同站点共用 443 端口需要 Nginx 包含 stream_core_module 和 stream_ssl_preread_module 模块。
 
-4、Nginx 支持 HTTPS server、HTTP/2 server 及 WebSocket proxy、gRPC proxy 需要 Nginx 包含 http_ssl_module 与 http_v2_module 模块及 OpenSSL 库。
+4、Nginx 支持 HTTP/2 server 需要 Nginx 包含 http_ssl_module 与 http_v2_module 模块等。
 
 5、Nginx 支持请求标头还原为真实客户端地址需要 Nginx 包含 http_realip_module 模块。
 
