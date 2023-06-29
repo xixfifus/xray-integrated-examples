@@ -1,6 +1,6 @@
 介绍：
 
-Xray 前置（监听 443 端口），利用 VLESS+Vision+TLS 回落及分流 WebSocket 特性与 Nginx 为 gRPC 提供反向代理，实现除 Xray 的 mKCP 应用外共用 443 端口，其应用如下：
+Xray 前置（监听 443 端口），利用 VLESS+Vision+TLS 回落/分流 WebSocket 特点及 Nginx 为 gRPC 提供反向代理，实现除 Xray 的 mKCP 应用外各应用共用 443 端口，其应用如下：
 
 1、E=VLESS+Vision+TLS（回落/分流配置，TLS 由自己启用及处理。）
 
@@ -12,13 +12,13 @@ Xray 前置（监听 443 端口），利用 VLESS+Vision+TLS 回落及分流 Web
 
 注意：
 
-1、Xray 的监听地址不支持 Shadowsocks 协议使用 UDS 监听。
+1、Xray 版本不小于 v1.7.2 才完美支持 VLESS 协议的 XTLS Vision 应用。
 
-2、Xray 版本不小于 v1.7.2 才完美支持 VLESS 协议的 XTLS Vision 应用。
+2、Xray 的监听地址不支持 Shadowsocks 协议使用 UDS 监听。
 
-3、Nginx 支持 H2C server 及 gRPC proxy 需要 Nginx 包含 http_v2_module 模块。
+3、Nginx 支持 H2C server 需要 Nginx 包含 http_v2_module 模块。
 
-4、Nginx 支持 H2C server，但不支持 HTTP/1.1 server 与 H2C server 共用一个端口或一个进程；故回落分成 http/1.1 回落与 h2 回落分别对应 Nginx 的 HTTP/1.1 server 与 H2C server。
+4、Nginx 版本不小于 v1.25.1 才支持 H2C server 与 HTTP/1.1 server 共用一个端口或一个进程。若 Nginx 版本小于 v1.25.1，回落必须分成 h2 回落与 http/1.1 回落分别对应 Nginx 的 H2C server 与 HTTP/1.1 server。
 
 5、Nginx 支持请求标头还原为真实客户端地址需要 Nginx 包含 http_realip_module 模块。
 
