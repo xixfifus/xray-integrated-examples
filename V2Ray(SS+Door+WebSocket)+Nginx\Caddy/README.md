@@ -15,16 +15,14 @@
 
 2、V2Ray 或 Xray 的监听地址不支持 Dokodemo-Door 协议使用 UDS 监听。
 
-3、v2ray_LLb_config.json 采用 Local Loopback 实现 Shadowsocks 应用与 Dokodemo-Door 的 WebSocket 应用连接，v2ray_UDS_config.json 采用 UDS 实现 Shadowsocks 应用与 Dokodemo-Door 的 WebSocket 应用连接；根据情况二选一即可。
+3、Nginx 支持 HTTPS server 需要 Nginx 包含 http_ssl_module 模块等。
 
-4、本示例 Shadowsocks 加 v2ray-plugin 或 xray-plugin 插件的 websocket-tls 模式服务端应用不等同 V2Ray 或 Xray 的 Shadowsocks+WebSocket+TLS 应用，两者不兼容。
+4、Nginx 支持请求标头还原为真实客户端地址需要 Nginx 包含 http_realip_module 模块。
 
-5、Nginx 支持 HTTPS server 及 WebSocket proxy 需要 Nginx 包含 http_ssl_module 模块及 OpenSSL 库。
+5、若选用 Nginx 实现应用，不要使用 ACME 客户端在采用本示例的服务器上以 HTTP-01 或 TLS-ALPN-01 验证方式申请与更新 TLS 证书，因 HTTP-01 或 TLS-ALPN-01 验证方式申请与更新 TLS 证书需监听 80 或 443 端口，从而与当前应用端口冲突。
 
-6、Nginx 支持请求标头还原为真实客户端地址需要 Nginx 包含 http_realip_module 模块。
+6、若选用 Caddy 实现应用，本示例 Caddy 支持自动 HTTPS，即自动申请与更新 TLS 证书，自动 HTTP 重定向到 HTTPS。
 
-7、若采用 Nginx 反向代理，不要使用 ACME 客户端在采用本示例的服务器上以 HTTP-01 或 TLS-ALPN-01 验证方式申请与更新 TLS 证书，因 HTTP-01 或 TLS-ALPN-01 验证方式申请与更新 TLS 证书需监听 80 或 443 端口，从而与当前应用端口冲突。
+7、配置 v2ray_LLb_config.json 采用 Local Loopback 实现 Shadowsocks 应用与 Dokodemo-Door 的 WebSocket 应用连接，配置 v2ray_UDS_config.json 采用 UDS 实现 Shadowsocks 应用与 Dokodemo-Door 的 WebSocket 应用连接；根据情况二选一即可。
 
-8、若采用 Caddy 反向代理，本示例 Caddy 支持自动 HTTPS，即自动申请与更新 TLS 证书，自动 HTTP 重定向到 HTTPS。
-
-9、配置1：使用 Local Loopback 连接。配置2：使用 UDS 连接。
+8、本示例 Shadowsocks 加 v2ray-plugin 或 xray-plugin 插件的 websocket-tls 模式服务端应用不等同 V2Ray 或 Xray 的 Shadowsocks+WebSocket+TLS 应用，两者不兼容。
