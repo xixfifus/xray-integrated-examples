@@ -6,7 +6,7 @@
   },
   "inbounds": [
     {
-      "listen": "@trojanh2c", //Trojan+H2C监听进程
+      "listen": "@trojanh2c.sock", //Trojan+H2C监听进程
       "protocol": "trojan",
       "settings": {
         "clients": [
