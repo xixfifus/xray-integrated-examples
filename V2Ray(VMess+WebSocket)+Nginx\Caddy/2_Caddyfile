@@ -28,7 +28,7 @@
 		header Connection *Upgrade*
 		header Upgrade websocket
 	}
-	reverse_proxy @vmws unix/@vmessws #转发给本机VMess+WebSocket监听进程
+	reverse_proxy @vmws unix/@vmessws.sock #转发给本机VMess+WebSocket监听进程
 
 	@host {
 		host xx.yy #限定域名访问（禁止以IP方式访问网站），修改为自己的域名。
@@ -44,4 +44,4 @@
 }
 #备注：
 #1、本配置仅支持申请普通TLS证书，若要申请通配符TLS证书请参考‘Caddy(Other Configuration) （Caddy的特殊应用配置方法。）’中对应介绍及对应配置示例。
-#2、本示例目前仅推荐套CDN来避免被封。
+#2、本示例仅推荐套CDN来避免被封。
