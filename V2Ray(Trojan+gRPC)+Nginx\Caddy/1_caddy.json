@@ -16,7 +16,7 @@
   "apps": {
     "http": {
       "servers": {
-        "https": {
+        "http2": {
           "listen": [":443"],
           "routes": [{
             "match": [{
