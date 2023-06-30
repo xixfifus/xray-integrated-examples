@@ -1,6 +1,6 @@
 介绍：
 
-Xray 前置（监听 443 端口），利用 VLESS+Vision+REALITY 支持转发给自己网站 Nginx 及 Nginx 支持 WebSocket、gRPC 代理，实现除 Xray 的 mKCP 应用外各应用共用 443 端口，其应用如下：
+Xray 前置（监听 443 端口），利用 VLESS+Vision+REALITY 支持转发给自己的网站及 Nginx 支持 WebSocket、gRPC 代理，实现除 Xray 的 mKCP 应用外各应用共用 443 端口，其应用如下：
 
 1、M=VLESS+Vision+REALITY（转发配置，REALITY 由自己启用及处理。）
 
@@ -16,7 +16,7 @@ Xray 前置（监听 443 端口），利用 VLESS+Vision+REALITY 支持转发给
 
 2、Xray 的监听地址不支持 Shadowsocks 协议使用 UDS 监听。
 
-3、Nginx 支持 HTTPS server、HTTP/2 server 及 WebSocket proxy、gRPC proxy 需要 Nginx 包含 http_ssl_module 与 http_v2_module 模块及 OpenSSL 库。
+3、Nginx 支持 HTTP/2 server 需要 Nginx 包含 http_ssl_module 与 http_v2_module 模块等。
 
 4、Nginx 支持请求标头还原为真实客户端地址需要 Nginx 包含 http_realip_module 模块。
 
