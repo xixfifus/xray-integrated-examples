@@ -6,7 +6,7 @@
   },
   "inbounds": [
     {
-      "listen": "@vless", /VLESS+Vision+TLS监听进程
+      "listen": "@vless.sock", /VLESS+Vision+TLS监听进程
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -19,7 +19,7 @@
         "decryption": "none",
         "fallbacks": [
           {
-            "dest": "@h1h2c", //h2与http/1.1回落进程（共用进程）
+            "dest": "@h1h2c.sock", //h2回落与http/1.1回落共用进程
             "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给Caddy。1或2表示PROXY protocol版本。多级传递，建议配置2。
           }
         ]
@@ -50,7 +50,7 @@
       }
     },
     {
-      "listen": "@trojan", //Trojan+TCP+TLS监听进程
+      "listen": "@trojan.sock", //Trojan+TCP+TLS监听进程
       "protocol": "trojan",
       "settings": {
         "clients": [
@@ -61,7 +61,7 @@
         ],
         "fallbacks": [
           {
-            "dest": "@h1h2c", //h2与http/1.1回落进程（共用进程）
+            "dest": "@h1h2c.sock", //h2回落与http/1.1回落共用进程
             "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给Caddy。1或2表示PROXY protocol版本。与上一致，建议配置2。
           }
         ]
@@ -94,7 +94,7 @@
       }
     },
     {
-      "listen": "@vmessws", //VMess+WebSocket监听进程
+      "listen": "@vmessws.sock", //VMess+WebSocket监听进程
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -120,7 +120,7 @@
       }
     },
     {
-      "listen": "@vlessh2c", //VLESS+H2C监听进程
+      "listen": "@vlessh2c.sock", //VLESS+H2C监听进程
       "protocol": "vless",
       "settings": {
         "clients": [

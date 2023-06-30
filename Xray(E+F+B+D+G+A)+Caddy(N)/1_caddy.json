@@ -53,13 +53,13 @@
           {
             "match": [{
               "tls": {
-                "sni": ["zh.xx.yy","z1.xx.yy"] //对应HTTPS server的域名（禁止以IP方式访问网站），修改为自己的。
+                "sni": ["zh.xx.yy","z1.xx.yy"] //对应HTTP/2 server的域名（禁止以IP方式访问网站），修改为自己的。
               }
             }],
             "handle": [{
               "handler": "proxy",
               "upstreams": [{
-                "dial": ["127.0.0.1:7443"] //转给HTTPS server本地监听端口
+                "dial": ["127.0.0.1:7443"] //转给HTTP/2 server本地监听端口
               }],
               "proxy_protocol": "v2" //启用PROXY protocol发送。v1或v2表示PROXY protocol版本，建议采用v2版。
             }]
@@ -82,7 +82,7 @@
           }]
         },
         "h1h2c": {
-          "listen": ["127.0.0.1:88"], //HTTP/1.1 server及H2C server本地监听端口
+          "listen": ["127.0.0.1:88"], //H2C server及HTTP/1.1 server本地监听端口
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }],
@@ -102,13 +102,13 @@
           }],
           "protocols": ["h1","h2c"] //开启HTTP/1.1 server与H2C server支持
         },
-        "https": {
-          "listen": ["127.0.0.1:7443"], //HTTPS server本地监听端口
+        "http2": {
+          "listen": ["127.0.0.1:7443"], //HTTP/2 server本地监听端口
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           },
           {
-            "wrapper": "tls" //HTTPS server开启PROXY protocol接收必须配置
+            "wrapper": "tls" //HTTP/2 server开启PROXY protocol接收必须配置
           }],
           "routes": [{
             "match": [{

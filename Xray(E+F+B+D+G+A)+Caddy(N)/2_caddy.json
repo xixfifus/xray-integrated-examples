@@ -31,7 +31,7 @@
             "handle": [{
               "handler": "proxy",
               "upstreams": [{
-                "dial": ["unix/@vless"] //转给VLESS+Vision+TLS监听进程
+                "dial": ["unix/@vless.sock"] //转给VLESS+Vision+TLS监听进程
               }],
               "proxy_protocol": "v2" //启用PROXY protocol发送。v1或v2表示PROXY protocol版本，建议采用v2版。
             }]
@@ -45,7 +45,7 @@
             "handle": [{
               "handler": "proxy",
               "upstreams": [{
-                "dial": ["unix/@trojan"] //转给Trojan+TCP+TLS监听进程
+                "dial": ["unix/@trojan.sock"] //转给Trojan+TCP+TLS监听进程
               }],
               "proxy_protocol": "v2" //启用PROXY protocol发送。v1或v2表示PROXY protocol版本，建议采用v2版。
             }]
@@ -53,13 +53,13 @@
           {
             "match": [{
               "tls": {
-                "sni": ["zh.xx.yy","z1.xx.yy"] //对应HTTPS server的域名（禁止以IP方式访问网站），修改为自己的。
+                "sni": ["zh.xx.yy","z1.xx.yy"] //对应HTTP/2 server的域名（禁止以IP方式访问网站），修改为自己的。
               }
             }],
             "handle": [{
               "handler": "proxy",
               "upstreams": [{
-                "dial": ["unix/@https"] //转给HTTPS server监听进程
+                "dial": ["unix/@http2.sock"] //转给HTTP/2 server监听进程
               }],
               "proxy_protocol": "v2" //启用PROXY protocol发送。v1或v2表示PROXY protocol版本，建议采用v2版。
             }]
@@ -82,7 +82,7 @@
           }]
         },
         "h1h2c": {
-          "listen": ["unix/@h1h2c"], //HTTP/1.1 server及H2C server监听进程
+          "listen": ["unix/@h1h2c.sock"], //H2C server及HTTP/1.1 server监听进程
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }],
@@ -102,13 +102,13 @@
           }],
           "protocols": ["h1","h2c"] //开启HTTP/1.1 server与H2C server支持
         },
-        "https": {
-          "listen": ["unix/@https"], //HTTPS server监听进程
+        "http2": {
+          "listen": ["unix/@http2.sock"], //HTTP/2 server监听进程
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           },
           {
-            "wrapper": "tls" //HTTPS server开启PROXY protocol接收必须配置
+            "wrapper": "tls" //HTTP/2 server开启PROXY protocol接收必须配置
           }],
           "routes": [{
             "match": [{
@@ -121,7 +121,7 @@
             "handle": [{
               "handler": "reverse_proxy",
               "upstreams": [{
-                "dial": "unix/@vmessws" //转发给本机VMess+WebSocket监听进程
+                "dial": "unix/@vmessws.sock" //转发给本机VMess+WebSocket监听进程
               }]
             }]
           },
@@ -136,7 +136,7 @@
                 "versions": ["h2c","2"]
               },
               "upstreams": [{
-                "dial": "unix/@vlessh2c" //转发给本机VLESS+H2C监听进程
+                "dial": "unix/@vlessh2c.sock" //转发给本机VLESS+H2C监听进程
               }]
             }]
           },
