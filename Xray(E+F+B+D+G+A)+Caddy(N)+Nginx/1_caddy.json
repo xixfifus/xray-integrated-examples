@@ -33,7 +33,7 @@
           }]
         },
         "h1h2c": {
-          "listen": ["127.0.0.1:88"], //HTTP/1.1 server及H2C server本地监听端口
+          "listen": ["127.0.0.1:88"], //H2C server及HTTP/1.1 server本地监听端口
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }],
@@ -53,13 +53,13 @@
           }],
           "protocols": ["h1","h2c"] //开启HTTP/1.1 server与H2C server支持
         },
-        "https": {
-          "listen": ["127.0.0.1:7443"], //HTTPS server本地监听端口
+        "http3": {
+          "listen": ["127.0.0.1:7443"], //HTTP/3 server本地监听端口
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           },
           {
-            "wrapper": "tls" //HTTPS server开启PROXY protocol接收必须配置
+            "wrapper": "tls" //HTTP/3 server开启PROXY protocol接收必须配置
           }],
           "routes": [{
             "match": [{
