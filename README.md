@@ -7,8 +7,8 @@
 6. 实现了使用json配置Caddy SNI分流，且可针对分流端口或进程是否开启PROXY protocol发送。
 7. 实现了Caddy与相关应用的TLS证书申请与更新全自动化。
 8. 实现了服务端综合应用配置示例中使用mKCP、WebSocket、HTTP/2、gRPC传输方式的应用配置可删、可换、可增（REALITY H2/gRPC应用除外），灵活组合而不影响整体架构。
-9. 实现了除V2Ray/Xray mKCP与Hysteria应用之外，其它应用对外都使用443端口，各应用互不影响。
-10. 实现了正常应用与CDN流量中转（基于WebSocket over TLS或基于gRPC over TLS）同时使用。
+9. 实现了正常应用与CDN流量中转（基于WebSocket over TLS或基于gRPC over TLS）同时使用。
+10. 实现了除V2Ray/Xray的mKCP应用与Hysteria应用之外，其它应用对外都使用443端口，各应用互不影响。
 11. 实现了除V2Ray/Xray的mKCP应用与Hysteria应用之外，其它应用都支持流量伪装与防探测，且提供流量伪装与防探测的回落或代理网站都支持HTTP自动跳转到HTTPS，SSL/TLS安全评估报告为A+（非AES算法的密码套件配置示例除外）等，即所有特征完全与真实网站一致。
 
 ### 服务端单一/简单应用配置示例
@@ -89,6 +89,7 @@
 ### systemd服务文件
 &emsp;[Service Configuration](https://github.com/lxhao61/integrated-examples/tree/main/Service%20Configuration)（配置软件服务由systemd管理。）
 
-### 使用/贡献指南
-1. 若科学上网相关软件增加新功能，开始在服务端单一应用配置示例中添加；过一段时间（测试及验证稳定后）才会服务端综合应用配置示例中添加。
-2. 欢迎你提交 PR，如对现行配置示例优化修订，或将自己使用的配置制作模板提交等。
+### 更新及贡献
+1. 根据科学上网软件更新不定时调整示例，如科学上网软件有新增功能及应用等。
+2. 根据当前科学上网情况不定时调整示例，如删除当前情况下不安全或被替代的应用等。
+3. 欢迎你提交PR，如对现行配置示例优化修订，或将自己使用的配置制作模板提交等。
