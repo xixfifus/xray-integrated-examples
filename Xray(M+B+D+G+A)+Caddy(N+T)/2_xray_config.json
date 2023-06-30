@@ -23,8 +23,8 @@
         "security": "reality",
         "realitySettings": {
           "show": false, //选填，若为true输出调试信息。
-          "dest": "@https", //转发给自己的网站监听进程
-          "xver": 1, //开启PROXY protocol发送，发送真实来源IP和端口给自己的网站。1或2表示PROXY protocol版本。
+          "dest": "@http2.sock", //转发给自己的网站监听进程
+          "xver": 2, //开启PROXY protocol发送，发送真实来源IP和端口给自己的网站。1或2表示PROXY protocol版本。
           "serverNames": [ //必填，客户端可用的serverName列表，暂不支持*通配符。
             "z1.xx.yy" //修改为自己的网站域名
           ],
@@ -43,7 +43,7 @@
       }
     },
     {
-      "listen": "@vmessws", //VMess+WebSocket监听进程
+      "listen": "@vmessws.sock", //VMess+WebSocket监听进程
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -69,7 +69,7 @@
       }
     },
     {
-      "listen": "@vlessh2c", //VLESS+H2C监听进程
+      "listen": "@vlessh2c.sock", //VLESS+H2C监听进程
       "protocol": "vless",
       "settings": {
         "clients": [

@@ -28,13 +28,13 @@
             }]
           }]
         },
-        "https": {
-          "listen": ["127.0.0.1:7443"], //HTTPS server本地监听端口
+        "http2": {
+          "listen": ["127.0.0.1:7443"], //HTTP/2 server本地监听端口
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           },
           {
-            "wrapper": "tls" //HTTPS server开启PROXY protocol接收必须配置
+            "wrapper": "tls" //HTTP/2 server开启PROXY protocol接收必须配置
           },
           {
             "wrapper": "trojan" //caddy-trojan插件应用必须配置

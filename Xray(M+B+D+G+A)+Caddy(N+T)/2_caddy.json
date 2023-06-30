@@ -28,13 +28,13 @@
             }]
           }]
         },
-        "https": {
-          "listen": ["unix/@https"], //HTTPS server监听进程
+        "http2": {
+          "listen": ["unix/@http2.sock"], //HTTP/2 server监听进程
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           },
           {
-            "wrapper": "tls" //HTTPS server开启PROXY protocol接收必须配置
+            "wrapper": "tls" //HTTP/2 server开启PROXY protocol接收必须配置
           },
           {
             "wrapper": "trojan" //caddy-trojan插件应用必须配置
@@ -50,7 +50,7 @@
             "handle": [{
               "handler": "reverse_proxy",
               "upstreams": [{
-                "dial": "unix/@vmessws" //转发给本机VMess+WebSocket监听进程
+                "dial": "unix/@vmessws.sock" //转发给本机VMess+WebSocket监听进程
               }]
             }]
           },
@@ -65,7 +65,7 @@
                 "versions": ["h2c","2"]
               },
               "upstreams": [{
-                "dial": "unix/@vlessh2c" //转发给本机VLESS+H2C监听进程
+                "dial": "unix/@vlessh2c.sock" //转发给本机VLESS+H2C监听进程
               }]
             }]
           },
