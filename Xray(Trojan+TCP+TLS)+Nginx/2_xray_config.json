@@ -19,11 +19,11 @@
           {
             "alpn": "h2", //h2回落匹配
             "dest": "/dev/shm/h2c.sock", //h2回落进程
-            "xver": 1 //开启PROXY protocol发送，发送真实来源IP和端口给Nginx。1或2表示PROXY protocol版本。
-          },
+            "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给Nginx。1或2表示PROXY protocol版本。
+          }, //对应Nginx版本小于v1.25.1配置，否则删除。
           {
-            "dest": "/dev/shm/h1.sock", //http/1.1回落进程
-            "xver": 1 //开启PROXY protocol发送，发送真实来源IP和端口给Nginx。1或2表示PROXY protocol版本。
+            "dest": "/dev/shm/h1.sock", //http/1.1回落进程或h2回落与http/1.1回落共用进程（对应Nginx版本不小于v1.25.1配置，回落共用进程修改为/dev/shm/h1h2c.sock。）
+            "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给Nginx。1或2表示PROXY protocol版本。
           }
         ]
       },
