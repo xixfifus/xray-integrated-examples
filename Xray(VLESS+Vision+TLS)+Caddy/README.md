@@ -1,6 +1,6 @@
 介绍：
 
-本示例配置为 VLESS+Vision+TLS 应用。Xray 服务端前置（监听 443 端口）处理来自墙内的 HTTPS 请求，如果是合法的 Xray 客户端请求，那么为该请求提供服务（科学上网）；否则将已解除 TLS 的流量请求回落（转发）给 Caddy，由 Caddy 为其提供 WEB 服务。
+本示例配置为 VLESS+Vision+TLS 应用。Xray 服务端前置（监听 443 端口）处理来自墙内的 HTTP/2或HTTPS 请求，如果是合法的 Xray 客户端请求，那么为该请求提供服务（科学上网）；否则将已解除 TLS 的流量请求回落（转发）给 Caddy，由 Caddy 为其提供 WEB 应用（回落应用）。
 
 原理：
 
@@ -11,7 +11,7 @@
 
 1、Xray 版本不小于 v1.7.2 才完美支持 VLESS 协议的 XTLS Vision 应用。
 
-2、Caddy 支持 HTTP/1.1 server 与 H2C server 共用一个端口或一个进程。
+2、Caddy 支持 H2C server 与 HTTP/1.1 server 共用一个端口或一个进程。
 
 3、本示例所需 TLS 证书由 Caddy（内置 ACME 客户端） 提供，实现 TLS 证书自动申请及更新。
 
