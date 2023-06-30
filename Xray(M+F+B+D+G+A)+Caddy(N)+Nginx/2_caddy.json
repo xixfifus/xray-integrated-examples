@@ -33,7 +33,7 @@
           }]
         },
         "h1h2c": {
-          "listen": ["unix/@h1h2c"], //HTTP/1.1 server及H2C server监听进程
+          "listen": ["unix/@h1h2c.sock"], //H2C server及HTTP/1.1 server监听进程
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           }],
@@ -53,13 +53,13 @@
           }],
           "protocols": ["h1","h2c"] //开启HTTP/1.1 server与H2C server支持
         },
-        "https": {
-          "listen": ["127.0.0.1:7443"], //HTTPS server本地监听端口
+        "http3": {
+          "listen": ["127.0.0.1:7443"], //HTTP/3 server本地监听端口
           "listener_wrappers": [{
             "wrapper": "proxy_protocol" //开启PROXY protocol接收
           },
           {
-            "wrapper": "tls" //HTTPS server开启PROXY protocol接收必须配置
+            "wrapper": "tls" //HTTP/3 server开启PROXY protocol接收必须配置
           }],
           "routes": [{
             "match": [{
@@ -72,7 +72,7 @@
             "handle": [{
               "handler": "reverse_proxy",
               "upstreams": [{
-                "dial": "unix/@vmessws" //转发给本机VMess+WebSocket监听进程
+                "dial": "unix/@vmessws.sock" //转发给本机VMess+WebSocket监听进程
               }]
             }]
           },
@@ -87,7 +87,7 @@
                 "versions": ["h2c","2"]
               },
               "upstreams": [{
-                "dial": "unix/@vlessh2c" //转发给本机VLESS+H2C监听进程
+                "dial": "unix/@vlessh2c.sock" //转发给本机VLESS+H2C监听进程
               }]
             }]
           },
