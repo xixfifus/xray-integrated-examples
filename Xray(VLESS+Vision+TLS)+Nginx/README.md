@@ -1,6 +1,6 @@
 介绍：
 
-本示例配置为 VLESS+Vision+TLS 应用。Xray 服务端前置（监听 443 端口）处理来自墙内的 HTTPS 请求，如果是合法的 Xray 客户端请求，那么为该请求提供服务（科学上网）；否则将已解除 TLS 的流量请求回落（转发）给 Nginx，由 Nginx 为其提供 WEB 服务。
+本示例配置为 VLESS+Vision+TLS 应用。Xray 服务端前置（监听 443 端口）处理来自墙内的 HTTP/2或HTTPS 请求，如果是合法的 Xray 客户端请求，那么为该请求提供服务（科学上网）；否则将已解除 TLS 的流量请求回落（转发）给 Nginx，由 Nginx 为其提供 WEB 应用（回落应用）。
 
 原理：
 
@@ -13,7 +13,7 @@
 
 2、Nginx 支持 H2C server 需要 Nginx 包含 http_v2_module 模块。
 
-3、Nginx 支持 H2C server，但不支持 HTTP/1.1 server 与 H2C server 共用一个端口或一个进程；故回落分成 http/1.1 回落与 h2 回落分别对应 Nginx 的 HTTP/1.1 server 与 H2C server。
+3、Nginx 版本不小于 v1.25.1 才支持 H2C server 与 HTTP/1.1 server 共用一个端口或一个进程。若 Nginx 版本小于 v1.25.1，回落必须分成 h2 回落与 http/1.1 回落分别对应 Nginx 的 H2C server 与 HTTP/1.1 server。
 
 4、Nginx 支持请求标头还原为真实客户端地址需要 Nginx 包含 http_realip_module 模块。
 
