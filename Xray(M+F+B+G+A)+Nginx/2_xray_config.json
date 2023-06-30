@@ -23,7 +23,7 @@
         "security": "reality",
         "realitySettings": {
           "show": false, //选填，若为true输出调试信息。
-          "dest": "/dev/shm/https.sock", //转发给自己的网站监听进程
+          "dest": "/dev/shm/http2.sock", //转发给自己的网站监听进程
           "xver": 2, //开启PROXY protocol发送，发送真实来源IP和端口给自己的网站。1或2表示PROXY protocol版本。
           "serverNames": [ //必填，客户端可用的serverName列表，暂不支持*通配符。
             "zv.xx.yy" //修改为自己的网站域名
@@ -60,9 +60,9 @@
             "alpn": "h2", //h2回落匹配
             "dest": "/dev/shm/h2c.sock", //h2回落进程
             "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给Nginx。1或2表示PROXY protocol版本。与上一致，建议配置2。
-          },
+          }, //对应Nginx版本小于v1.25.1配置，否则删除。
           {
-            "dest": "/dev/shm/h1.sock", //http/1.1回落进程
+            "dest": "/dev/shm/h1.sock", //http/1.1回落进程或h2回落与http/1.1回落共用进程（对应Nginx版本不小于v1.25.1配置，回落共用进程修改为/dev/shm/h1h2c.sock。）
             "xver": 2 //开启PROXY protocol发送，发送真实来源IP和端口给Nginx。1或2表示PROXY protocol版本。与上一致，建议配置2。
           }
         ]
