@@ -1,6 +1,6 @@
 介绍：
 
-Xray 前置（监听 443 端口），利用 VLESS+Vision+REALITY 回落（套娃） VLESS+H2C，实现 VLESS+Vision+REALITY 与 VLESS+H2C+REALITY 应用共用 443 端口，其应用如下：
+Xray 前置（监听 443 端口），利用 VLESS+Vision+REALITY 回落 VLESS+H2C（套娃），实现 VLESS+Vision+REALITY 与 VLESS+H2C+REALITY 应用共用 443 端口，其应用如下：
 
 1、M=VLESS+Vision+REALITY（回落与转发配置，REALITY 由自己启用及处理。）
 
